@@ -3,11 +3,12 @@ import Styles from "@/app/restaurantCard.module.css";
 import React, { useState } from "react";
 import Link from "next/link";
 
-
 export default function RestaurantCard({ restaurant }) {
 
     const [status, setIsLiked] = useState(false);
-    const handleChange = () => {
+    const handleChange = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         setIsLiked(!status);
 
     }

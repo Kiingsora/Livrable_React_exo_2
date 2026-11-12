@@ -13,12 +13,11 @@ const sections = [
 export default async function Page({ params }) {
     const { slug } = await params;
     const restaurant = Restaurants.restaurants.find((restaurant) => restaurant.slug === slug);
+    let itemIndex = 0;
 
     if (!restaurant) {
         notFound();
     }
-
-    let itemIndex = 0;
 
     return (
         <>
